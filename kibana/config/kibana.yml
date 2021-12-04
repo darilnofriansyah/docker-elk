@@ -9,13 +9,8 @@ server:
   name: "kibana"
   host: "0.0.0.0"
   port: 5601
-
 elasticsearch.hosts: [ "http://elasticsearch01:9200","http://elasticsearch02:9200" ]
 monitoring.ui.container.elasticsearch.enabled: true
-
 csp.strict: true
-
-## X-Pack security credentials
-#
 elasticsearch.username: kibana_system
 elasticsearch.password: GRi7jj4OLaBdmvBikdvm
