@@ -12,7 +12,7 @@ services:
           read_only: true
         - ${ELASTICSEARCH_DATA:-./data}/elasticsearch01:/usr/share/elasticsearch/data
       command:
-        - sudo chown -R 1000:root /usr/share/elasticsearch/data
+        - sudo chown -R 1000:1000 data
       ports:
         - "9200:9200"
         - "9300:9300"
@@ -38,7 +38,7 @@ services:
           read_only: true
         - ${ELASTICSEARCH_DATA:-./data}/elasticsearch02:/usr/share/elasticsearch/data
       command:
-        - sudo chown -R 1000:root /usr/share/elasticsearch/data
+        - sudo chown -R 1000:1000 data
       environment:
         - node.name=elasticsearch02
         - discovery.seed_hosts=elasticsearch01
