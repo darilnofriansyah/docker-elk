@@ -10,7 +10,7 @@ services:
           source: ./elasticsearch/config/elasticsearch.yml
           target: /usr/share/elasticsearch/config/elasticsearch.yml
           read_only: true
-      #- ${ELASTICSEARCH_DATA:-/data}/elasticsearch01:/usr/share/elasticsearch/data
+        - ${ELASTICSEARCH_DATA:-./data}/elasticsearch01:/usr/share/elasticsearch/data
       ports:
         - "9200:9200"
         - "9300:9300"
@@ -34,7 +34,7 @@ services:
           source: ./elasticsearch/config/elasticsearch.yml
           target: /usr/share/elasticsearch/config/elasticsearch.yml
           read_only: true
-        #- ${ELASTICSEARCH_DATA:-/data}/elasticsearch02:/usr/share/elasticsearch/data
+        - ${ELASTICSEARCH_DATA:-./data}/elasticsearch02:/usr/share/elasticsearch/data
       environment:
         - node.name=elasticsearch02
         - discovery.seed_hosts=elasticsearch01
